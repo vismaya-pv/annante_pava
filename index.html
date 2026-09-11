@@ -7,7 +7,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700;800&family=Mali:ital,wght@0,500;0,700;1,500&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧸</text></svg>">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -217,4 +216,180 @@
             <div class="circle-btn-rays"><span></span><span></span></div>
             <button class="circle-action-btn btn-music" id="btnMusic" title="Music" aria-label="Music">
               <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
-                <path d="M12 3v1
+                <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Button 2: Blessing (Magic Wand / Sparkle) -->
+          <div class="circle-btn-wrap">
+            <div class="circle-btn-rays"><span></span><span></span></div>
+            <button class="circle-action-btn btn-blessing" id="btnBlessing" title="Blessing" aria-label="Blessing">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m15 4-2 4 4-2-4-2z M8 8l-2 4 4-2-4-2z M17 12l-1.5 3 3-1.5-3-1.5z M4 20l12-12"/>
+                <path d="m14 6 4 4"/>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Button 3: Do Not Press (Stop / Prohibition Hand) -->
+          <div class="circle-btn-wrap">
+            <div class="circle-btn-rays"><span></span><span></span></div>
+            <button class="circle-action-btn btn-donotpress" id="btnDoNotPress" title="Do Not Press" aria-label="Do Not Press">
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" stroke-width="2.5"/>
+                <path d="M18 10a1.5 1.5 0 0 0-3 0v-2a1.5 1.5 0 0 0-3 0V7a1.5 1.5 0 0 0-3 0v5.5a1.5 1.5 0 0 0-3 0V14c0 3.5 2.5 6 6 6s6-2.5 6-6v-4z" fill="currentColor" opacity="0.9"/>
+                <line x1="4.93" y1="4.93" x2="19.07" y2="19.07" stroke="currentColor" stroke-width="2.5"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Lower Message Banner -->
+        <div class="cute-cat-banner">
+          <div class="cat-avatar">
+            <svg viewBox="0 0 60 50" width="38" height="32">
+              <polygon points="12,20 16,4 28,14" fill="#FFF" stroke="#333" stroke-width="2"/>
+              <polygon points="15,18 17,9 25,15" fill="#FFB6C1"/>
+              <polygon points="48,20 44,4 32,14" fill="#FFF" stroke="#333" stroke-width="2"/>
+              <polygon points="45,18 43,9 35,15" fill="#FFB6C1"/>
+              <ellipse cx="30" cy="30" rx="22" ry="18" fill="#FFF" stroke="#333" stroke-width="2.4"/>
+              <circle cx="22" cy="27" r="2.5" fill="#333"/>
+              <circle cx="38" cy="27" r="2.5" fill="#333"/>
+              <ellipse cx="17" cy="33" rx="3.5" ry="2" fill="#FFAAA6" opacity="0.7"/>
+              <ellipse cx="43" cy="33" rx="3.5" ry="2" fill="#FFAAA6" opacity="0.7"/>
+              <path d="M 28 32 Q 30 35 32 32" fill="none" stroke="#333" stroke-width="1.8"/>
+            </svg>
+          </div>
+          <span class="cat-banner-text">Just one more try...</span>
+          <span class="cat-banner-heart">♡</span>
+        </div>
+
+        <!-- RECENT WINS Section -->
+        <div class="recent-wins-section">
+          <div class="recent-wins-header">
+            <h3 class="recent-wins-title">RECENT WINS</h3>
+            <button class="btn-view-all" id="btnViewAll">View all →</button>
+          </div>
+          <div class="recent-wins-thumbnails" id="recentWinsList">
+            <!-- Dynamically populated from game.js -->
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Bottom-right Watermark -->
+    <footer class="game-footer">
+      <div class="footer-badge">
+        <span class="footer-star">★</span>
+        <span class="footer-text">A HAPPIER INTERNET ♡</span>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ================================================== -->
+  <!-- OVERLAYS & MODALS                                  -->
+  <!-- ================================================== -->
+
+  <!-- 1. DANCE MODE (CHANGE VIEW) MODAL -->
+  <div class="dance-modal-backdrop" id="danceViewModal">
+    <div class="dance-arcade-cabinet">
+      <div class="dance-header">
+        <h2 class="dance-title">Oru dance Kalik</h2>
+        <button class="dance-close-btn" id="btnCloseDance" aria-label="Close">✕</button>
+      </div>
+
+      <div class="dance-camera-viewport">
+        <!-- Live Mirror Video -->
+        <video id="danceVideo" autoplay playsinline muted></video>
+
+        <!-- Friendly Fallback if camera denied/not available -->
+        <div class="dance-fallback-screen" id="danceFallback">
+          <div class="fallback-chibi-dancer">🦖</div>
+          <p class="fallback-note">(Camera not detected or permission denied, but keep dancing!)</p>
+        </div>
+
+        <!-- Active Dance HUD: 10s Countdown & Energy Meter -->
+        <div class="dance-active-hud" id="danceActiveHUD">
+          <div class="dance-countdown-circle">
+            <span class="countdown-num" id="danceCountdownNumber">10</span>
+          </div>
+          <div class="dance-meter-wrap">
+            <span class="dance-meter-label">Dance Energy ✨</span>
+            <div class="dance-meter-track">
+              <div class="dance-meter-fill" id="danceEnergyFill"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dance Rating Result Screen -->
+        <div class="dance-result-overlay" id="danceResultScreen">
+          <div class="result-banner-box">
+            <div class="result-sparkles">✨ 🌟 ✨</div>
+            <div class="result-score-title">YOUR DANCE SCORE:</div>
+            <div class="result-score-big" id="danceScoreValue">--/10</div>
+            
+            <!-- Comedic Animated Dance Message Overlay: "ahh polich petta thala polum sahikilla" -->
+            <div class="dance-comment-banner" id="danceFollowupMessage">
+              <div class="comment-sparkle">💖 ✦ 💖</div>
+              <h3 class="dance-comment-text">ahh polich petta thala polum sahikilla</h3>
+              <div class="comment-sparkle">✨ 🌸 ✨</div>
+            </div>
+
+            <div class="result-buttons-row">
+              <button class="pill-btn btn-dance-action" id="btnDanceAgain">Dance Again 💃</button>
+              <button class="pill-btn btn-dance-action" onclick="window.danceModeMgr.stopAndClose()">Back to Arcade 🎮</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. POST-DROP FAILURE MESSAGE OVERLAY: "sarilla kutta try again fail again hehehe" -->
+  <div class="overlay-toast fail-toast" id="postDropOverlay">
+    <div class="fail-toast-content">
+      <div class="fail-sparkle-row">✦ 💔 ✦</div>
+      <h2 class="fail-text">sarilla kutta try again fail again hehehe</h2>
+      <div class="fail-sparkle-row">✨ 😅 ✨</div>
+    </div>
+  </div>
+
+  <!-- 3. BLESSING OVERLAY: "nanaayi vaa" -->
+  <div class="overlay-toast blessing-toast" id="blessingOverlay">
+    <div class="blessing-content">
+      <div class="blessing-sparkle-row">✦ 💖 🪄 💖 ✦</div>
+      <h2 class="blessing-text">nanaayi vaa</h2>
+      <div class="blessing-sparkle-row">✨ 🌸 ✨</div>
+    </div>
+  </div>
+
+  <!-- 4. DO NOT PRESS OVERLAY: "njn paranjelle thodanda yann chammi poyelle" -->
+  <div class="overlay-toast warning-toast" id="warningOverlay">
+    <div class="warning-content">
+      <div class="warning-icon-row">⚠️ 🚫 ⚠️</div>
+      <h2 class="warning-text">njn paranjelle thodanda yann chammi poyelle</h2>
+      <div class="warning-sub">chammi poyelle... 😅</div>
+    </div>
+  </div>
+
+  <!-- 5. VIEW ALL RECENT WINS MODAL -->
+  <div class="collection-modal-backdrop" id="viewAllModal">
+    <div class="collection-card">
+      <div class="collection-header">
+        <h2 class="collection-title">Plushie Collection Gallery ♡</h2>
+        <button class="collection-close-btn" id="btnCloseViewAll" aria-label="Close">✕</button>
+      </div>
+      <div class="all-wins-grid" id="allWinsGrid">
+        <!-- Dynamically filled with plush counts -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="characters.js"></script>
+  <script src="audio.js"></script>
+  <script src="dance-mode.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
