@@ -1,1 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Annante Pava — Virtual Claw Machine</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700;800&family=Mali:ital,wght@0,500;0,700;1,500&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧸</text></svg>">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Decorative Background Clouds & Floating Stars -->
+  <div class="bg-clouds-top-left"></div>
+  <div class="bg-clouds-bottom-left"></div>
+  <div class="bg-clouds-bottom-right"></div>
+  <div class="floating-deco-star star-1">★</div>
+  <div class="floating-deco-star star-2">✦</div>
+  <div class="floating-deco-star star-3">★</div>
+  <div class="floating-deco-star star-4">✦</div>
+  <div class="floating-deco-star star-5">★</div>
 
+  <div id="appContainer" class="main-layout">
+    <!-- Top-Left Header -->
+    <header class="game-header">
+      <div class="brand-title-wrap">
+        <h1 class="brand-title">
+          <span class="word-annante">Annante</span>
+          <span class="word-pava">Pava</span>
+          <span class="header-star">★</span>
+        </h1>
+        <div class="subtitle-wrap">
+          <span class="header-doodle-sparkle">✦</span>
+          <p class="brand-subtitle">varu tholkku povvu :)</p>
+          <span class="header-doodle-sparkle">✦</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Game Area: Claw Machine (Left) & Control Panel (Right) -->
+    <main class="arcade-stage">
+      <!-- ============================================== -->
+      <!-- LEFT: MAIN CLAW MACHINE CABINET                -->
+      <!-- ============================================== -->
+      <section class="cabinet-outer" id="clawCabinet">
+        <div class="cabinet-chassis">
+          <!-- Warm Neon Arcade Tube Lights on Ceiling -->
+          <div class="arcade-light-bar light-top"></div>
+          <div class="arcade-light-bar light-left"></div>
+          <div class="arcade-light-bar light-right"></div>
+
+          <!-- Glass Enclosure with Inner Chamber -->
+          <div class="glass-chamber">
+            <div class="glass-reflection-glare"></div>
+
+            <!-- Wall Posters & Neon Decals inside Machine -->
+            <div class="poster-card poster-left">
+              <div class="poster-face">☺</div>
+              <div class="poster-text">GOOD<br>THINGS<br>TAKE A<br>TRY<br>♡</div>
+            </div>
+
+            <div class="poster-card poster-right">
+              <div class="poster-text">PLAY<br>PICK<br>SMILE<br>♡</div>
+            </div>
+
+            <div class="glass-etching-clawzone">
+              <span class="zone-star">★</span>
+              <span class="zone-text">CLAW<br>ZONE</span>
+              <span class="zone-star">★</span>
+            </div>
+
+            <!-- Floating Little Ceiling Stars -->
+            <div class="chamber-star star-c1">★</div>
+            <div class="chamber-star star-c2">★</div>
+            <div class="chamber-star star-c3">★</div>
+
+            <!-- Ceiling Mounted Overhead Mechanical Rail & Motorized Carriage -->
+            <div class="ceiling-mount-anchor"></div>
+            <div class="trolley-track" id="trolleyTrack">
+              <div class="trolley-runner" id="trolleyX">
+                <div class="trolley-wheel-left"></div>
+                <div class="trolley-motor-box"></div>
+                <div class="trolley-wheel-right"></div>
+                <div class="cable-outlet-collar"></div>
+
+                <!-- Claw Cable & Articulated Assembly PHYSICALLY ATTACHED TO CARRIAGE -->
+                <div class="claw-assembly" id="clawAssembly">
+                  <div class="claw-cable" id="clawCable">
+                    <div class="cable-coils"></div>
+                    <div class="cable-chrome-rod"></div>
+                  </div>
+                  <div class="claw-head" id="clawHead">
+                    <div class="claw-hub"></div>
+                    <!-- 3 Articulated Gripping Fingers with realistic joints -->
+                    <div class="claw-finger finger-left">
+                      <div class="finger-upper"></div>
+                      <div class="finger-tip"></div>
+                    </div>
+                    <div class="claw-finger finger-center">
+                      <div class="finger-upper"></div>
+                      <div class="finger-tip"></div>
+                    </div>
+                    <div class="claw-finger finger-right">
+                      <div class="finger-upper"></div>
+                      <div class="finger-tip"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Machine Floor (Solid Collision Surface - Bottom toys rest directly on this) -->
+            <div class="machine-floor-plane" id="machineFloor">
+              <div class="floor-surface-grid"></div>
+              <div class="floor-rim-rim"></div>
+            </div>
+
+            <!-- Bottom Plush Pile & Prizes Container (Physically resting on bottom platform) -->
+            <div class="plush-pile-container" id="plushContainer">
+              <!-- Dynamically populated from characters.js -->
+            </div>
+
+            <!-- Base Faceted Color Balls (Visual accent along bottom front rim) -->
+            <div class="base-ball-layer">
+              <div class="ball b-pink"></div>
+              <div class="ball b-blue"></div>
+              <div class="ball b-purple"></div>
+              <div class="ball b-yellow"></div>
+              <div class="ball b-green"></div>
+              <div class="ball b-white"></div>
+              <div class="ball b-mint"></div>
+              <div class="ball b-lilac"></div>
+            </div>
+
+            <!-- Animated Prize Chute / Drop Box (BOTTOM-LEFT CORNER matching reference image) -->
+            <div class="prize-chute-box" id="prizeChute">
+              <div class="chute-lip"></div>
+              <!-- Motorized animated trapdoor/flap that closes BEFORE toy completes fall -->
+              <div class="chute-trapdoor" id="chuteTrapdoor">
+                <div class="trapdoor-flap flap-left"></div>
+                <div class="trapdoor-flap flap-right"></div>
+              </div>
+              <div class="chute-acrylic-left"></div>
+              <div class="chute-acrylic-front"></div>
+              <div class="chute-acrylic-right"></div>
+              <div class="chute-interior"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================== -->
+      <!-- RIGHT: CONTROL PANEL CARD                      -->
+      <!-- ============================================== -->
+      <section class="control-panel-card">
+        <!-- Top Controls: Joystick + DROP Button -->
+        <div class="panel-primary-row">
+          <!-- Joystick Area -->
+          <div class="joystick-wrapper">
+            <div class="joystick-base" id="joystickBase">
+              <button class="joy-arrow joy-up" data-dir="up" title="Move Up" aria-label="Up">▲</button>
+              <button class="joy-arrow joy-down" data-dir="down" title="Move Down" aria-label="Down">▼</button>
+              <button class="joy-arrow joy-left" data-dir="left" title="Move Left" aria-label="Left">◀</button>
+              <button class="joy-arrow joy-right" data-dir="right" title="Move Right" aria-label="Right">▶</button>
+              <div class="joystick-socket">
+                <div class="joystick-stick" id="joystickStick"></div>
+                <div class="joystick-ball" id="joystickBall">
+                  <div class="ball-shine"></div>
+                </div>
+              </div>
+            </div>
+            <span class="joystick-label">MOVE</span>
+          </div>
+
+          <!-- DROP Button with Action Rays -->
+          <div class="drop-button-wrap">
+            <div class="action-rays-drop">
+              <span></span><span></span><span></span>
+            </div>
+            <button class="btn-arcade-drop" id="btnDrop" aria-label="Drop Claw">
+              <span class="drop-btn-text">DROP</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Middle Controls: Change View & Sound On Toggle -->
+        <div class="panel-middle-row">
+          <!-- Change View Button (triggers Dance Mode) -->
+          <button class="pill-btn btn-change-view" id="btnChangeView" aria-label="Change View">
+            <svg class="pill-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+              <circle cx="12" cy="13" r="4"></circle>
+            </svg>
+            <span>Change View</span>
+          </button>
+
+          <!-- Sound On Toggle Switch -->
+          <div class="sound-toggle-wrap">
+            <svg class="pill-icon sound-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 18V5l12-2v13"></path>
+              <circle cx="6" cy="18" r="3"></circle>
+              <circle cx="18" cy="16" r="3"></circle>
+            </svg>
+            <span class="sound-label">Sound On</span>
+            <label class="switch-pill">
+              <input type="checkbox" id="soundToggle" checked aria-label="Toggle Sound">
+              <span class="slider-round"></span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Three Compact Circular Icon Buttons (Icon-only, compact, evenly spaced) -->
+        <div class="circular-buttons-row">
+          <!-- Button 1: Music (Note) -->
+          <div class="circle-btn-wrap">
+            <div class="circle-btn-rays"><span></span><span></span></div>
+            <button class="circle-action-btn btn-music" id="btnMusic" title="Music" aria-label="Music">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                <path d="M12 3v1
