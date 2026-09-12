@@ -492,7 +492,7 @@ body {
 
 .claw-cable {
   width: 8px;
-  height: 75px; /* Default resting length directly connecting carriage to claw */
+  height: 75px;
   background: #212121;
   position: relative;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.75);
@@ -816,12 +816,12 @@ body {
 
 .trapdoor-flap.flap-left {
   border-radius: 4px 0 0 4px;
-  transform: rotateX(85deg); /* Initially swung open downward */
+  transform: rotateX(85deg);
 }
 
 .trapdoor-flap.flap-right {
   border-radius: 0 4px 4px 0;
-  transform: rotateX(85deg); /* Initially swung open downward */
+  transform: rotateX(85deg);
 }
 
 .chute-trapdoor.trapdoor-closing .trapdoor-flap.flap-left {
@@ -834,7 +834,7 @@ body {
 
 .chute-trapdoor.trapdoor-closed .trapdoor-flap.flap-left,
 .chute-trapdoor.trapdoor-closed .trapdoor-flap.flap-right {
-  transform: rotateX(0deg); /* Snapped completely closed */
+  transform: rotateX(0deg);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
@@ -1475,7 +1475,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transform: scaleX(-1); /* Mirrored camera selfie view */
+  transform: scaleX(-1);
 }
 
 .dance-fallback-screen {
@@ -1623,11 +1623,26 @@ body {
      0px 4px 0 #281D2E;
 }
 
+.result-rating-stars {
+  font-size: 24px;
+  letter-spacing: 4px;
+  margin: -2px 0 2px 0;
+  filter: drop-shadow(0 2px 4px rgba(255, 193, 7, 0.4));
+  animation: pulseStars 1.5s infinite alternate ease-in-out;
+}
+
+@keyframes pulseStars {
+  0% { transform: scale(0.96); }
+  100% { transform: scale(1.06); }
+}
+
 .result-verdict {
   font-family: var(--font-sub);
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 700;
   color: #382B48;
+  max-width: 340px;
+  line-height: 1.35;
 }
 
 .result-buttons-row {
