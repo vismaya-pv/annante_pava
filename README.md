@@ -93,9 +93,8 @@ For Hardware:
 [Add any extra demo materials/links]
 
 ## Team Contributions
-- [Name 1]: [Specific contributions]
-- [Name 2]: [Specific contributions]
-- [Name 3]: [Specific contributions]
+- Vismaya P V: Claw machine engine & game logic (game.js) — physics, automated DROP state machine, reversed joystick controls, prize chute mechanism; plushie character art (characters.js) — 16 hand-crafted SVG plush designs
+- Avani Sreedharan: UI/UX design & styling (index.html, styles.css) — arcade cabinet layout, control panel, overlays/modals; audio & Dance Mode (audio.js, dance-mode.js) — procedural sound effects, webcam-based dance tracking and scoring; Malayalam/English comedic copywriting & QA (validate.py)
 
 ---
 Made with ❤️ at TinkerHub Useless Projects 
