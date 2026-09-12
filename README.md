@@ -60,10 +60,13 @@ python3 validate.py
 For Software:
 
 # Screenshots (Add at least 3)
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
 
-![useless_project_3.0](Dropbox closing.png)
+<img width="1600" height="861" alt="WhatsApp Image 2026-09-12 at 05 41 48" src="https://github.com/user-attachments/assets/c6cee6f7-42d6-4bc9-a4c4-b530dc3d7787" />
+
+
+<img width="1915" height="1028" alt="Dropbox closing" src="https://github.com/user-attachments/assets/f55bf0d9-2da0-41ea-bba8-09ff621c836a" />
+
+<img width="1600" height="837" alt="WhatsApp Image 2026-09-12 at 05 41 48 (1)" src="https://github.com/user-attachments/assets/7c81968b-8d27-48ce-87ee-914a6fb2529c" />
 
 
 ![Screenshot3](Add screenshot 3 here with proper name)
