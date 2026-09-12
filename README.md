@@ -64,7 +64,8 @@ For Software:
 *Add caption explaining what this shows*
 
 ![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
+*Add caption explaining what this shows*![Uploading Dropbox closing.png…]()
+
 
 ![Screenshot3](Add screenshot 3 here with proper name)
 *Add caption explaining what this shows*
