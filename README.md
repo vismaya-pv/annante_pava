@@ -6,13 +6,13 @@
 
 
 ## Basic Details
-### Team Name: [Name]
+### Team Name: Iconiq.exe
 
 
 ### Team Members
-- Team Lead: [Name] - [College]
-- Member 2: [Name] - [College]
-- Member 3: [Name] - [College]
+- Team Lead: Avani Sreedharan - Adi Shankara Institute of Engineering and Technology
+- Member 2: Vismaya P V - Adi Shankara Institute of Engineering and Technology
+
 
 ### Project Description
 Annante Pava is a virtual arcade claw machine that looks completely winnable and absolutely is not. Steer a motorized claw around a glass cabinet full of cute plushies, hit DROP, and watch a fully automated grab-lift-carry-release sequence play out — only for the trapdoor to slam shut a moment too soon, every single time.
